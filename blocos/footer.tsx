@@ -39,9 +39,11 @@ export default function Footer() {
                 {/* Linha Final de Copyright */}
                 <div className="border-t border-gray-100 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-400 uppercase tracking-widest font-medium">
                     <p>© {new Date().getFullYear()} Érika Golegã Personalizados - Todos os direitos reservados</p>
-                    <a href="https://dvls.com.br" className="flex cursor-pointer items-center gap-1">
-                        Desenvolvido com 💖 por <span className="text-pink-primary/60">DVLS</span>
+
+                    <a href="https://dvls.com.br" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center gap-1 text-[12px]">
+                        Desenvolvido por <span className="text-gray-600 font-bold">DV<span className="text-purple-400 font-bold">L</span>S</span>
                     </a>
+
                 </div>
             </div>
         </footer>
