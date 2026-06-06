@@ -86,14 +86,14 @@ export default function Catalogo() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 w-[90%] mx-auto">
 
         {produtosFiltrados.map((produto) => (
-          <div key={produto.id} className="border border-gray-400 rounded-lg overflow-hidden w-[90%] mx-auto mt-5">
+          <div key={produto.id} className="border border-gray-400 rounded-lg  w-[90%] mx-auto mt-5 relative">
             <div className="p-2">
               <img src={produto.img} alt={produto.produto} className="w-full h-auto rounded-lg" />
               <p className="text-center font-bold">{produto.produto}</p>
               <p className="text-center text-gray-600">Und / R$ {Number(produto.preco).toFixed(2)}</p>
             </div>
             {produto.obs && (
-              <div className="bg-pink-300 px-3 py-1.5 text-center text-sm font-semibold text-pink-900 border-t border-pink-400">
+              <div className="bg-pink-600 px-1 md:px-3 py-1.5 text-center text-sm font-semibold text-white rounded-2xl absolute -top-5 sm:-top-3 -left-3 shadow shadow-black/60 ">
                 {produto.obs}
               </div>
             )}
