@@ -1,20 +1,14 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { getImagens, getProdutos, getTemas } from "./actions";
+import { getImagens, getProdutos } from "./actions";
 import Loading from "@/componentes/loading";
 
 type Imagem = {
   id: number;
   produto: string;
-  tema: string;
   img: string;
   preco: number;
-}
-
-type Tema = {
-  id: number;
-  nome: string;
 }
 
 type Produto = {
@@ -24,26 +18,19 @@ type Produto = {
 
 export default function Catalogo() {
 
-  const [temaSelecionado, setTemaSelecionado] = useState('');
   const [produtoSelecionado, setProdutoSelecionado] = useState('');
   const [busca, setBusca] = useState('');
 
   const [imagens, setImagens] = useState<Imagem[]>([]);
-  const [temas, setTemas] = useState<Tema[]>([]);
   const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const pegarDados = async () => {
-
     setLoading(true)
-
     const resImagens = await getImagens()
-    const resTemas = await getTemas();
     const resProdutos = await getProdutos();
-
     setImagens(resImagens);
-    setTemas(resTemas);
     setProdutos(resProdutos);
-
     setLoading(false)
   }
 
@@ -52,15 +39,10 @@ export default function Catalogo() {
   }, [])
 
   const produtosFiltrados = imagens.filter((i) => {
-
-    const matchTema = temaSelecionado ? i.tema === temaSelecionado : true;
     const matchProd = produtoSelecionado ? i.produto === produtoSelecionado : true;
     const matchBusca = busca ? i.produto.toLowerCase().includes(busca.toLowerCase()) : true;
-
-    return matchTema && matchProd && matchBusca;
+    return matchProd && matchBusca;
   });
-
-  const [loading, setLoading] = useState(true)
 
   return (
     <div>
@@ -73,8 +55,7 @@ export default function Catalogo() {
             className="w-full px-3 py-1 rounded-2xl border border-gray-400"
             name="produto"
             value={produtoSelecionado}
-            onChange={(e) => setProdutoSelecionado(e.target.value)}
-            id="tema">
+            onChange={(e) => setProdutoSelecionado(e.target.value)}>
             <option value="">Todos</option>
 
             {produtos.map((produto) => (
@@ -82,27 +63,9 @@ export default function Catalogo() {
             ))}
 
           </select>
-
-        </label>
-
-        <label>Tema
-          <select
-            className="w-full px-3 py-1 rounded-2xl border border-gray-400"
-            name="tema"
-            value={temaSelecionado}
-            onChange={(e) => setTemaSelecionado(e.target.value)}
-            id="tema">
-            <option value="">Todos</option>
-
-            {temas.map((tema) => (
-              <option key={tema.id} value={tema.nome}>{tema.nome}</option>
-            ))}
-
-          </select>
         </label>
 
         <label>Ou se preferir...
-
           <input
             className="w-full px-3 py-1 rounded-2xl border border-gray-400"
             type="text"
@@ -111,11 +74,10 @@ export default function Catalogo() {
             onChange={(e) => setBusca(e.target.value)}
           />
         </label>
-
       </div>
 
       {/* header do catalogo */}
-      <p className=" text-center mt-5">
+      <p className="text-center mt-5">
         <span className="font-bold">{produtosFiltrados.length}</span> produtos encontrados
       </p>
 
@@ -123,18 +85,14 @@ export default function Catalogo() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 w-[90%] mx-auto">
 
         {produtosFiltrados.map((produto) => (
-
           <div key={produto.id} className="border border-gray-400 rounded-lg p-2 w-[90%] mx-auto mt-5">
             <img src={produto.img} alt={produto.produto} className="w-full h-auto rounded-lg" />
             <p className="text-center font-bold">{produto.produto}</p>
-            <p className="text-center text-gray-600">{produto.tema}</p>
             <p className="text-center text-gray-600">Und / R$ {Number(produto.preco).toFixed(2)}</p>
           </div>
-
         ))}
 
       </div>
-
 
       <Loading ativo={loading} />
     </div>
