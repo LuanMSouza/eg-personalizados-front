@@ -12,6 +12,7 @@ export async function getImagens() {
         SELECT i.id,
         p.nome AS produto,
         p.preco_venda AS preco,
+        p.obs AS obs,
         i.img_url AS img
         FROM imagens i
         JOIN produtos p ON i.produto_id = p.id
