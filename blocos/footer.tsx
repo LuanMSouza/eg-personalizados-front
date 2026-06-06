@@ -23,7 +23,7 @@ export default function Footer() {
                     <div className="flex flex-col items-center md:items-end gap-4">
                         <div className="flex gap-6 text-pink-primary font-medium">
                             <a href="#" className="hover:text-blue-pastel transition-colors">Início</a>
-                            <a href="https://wa.me/5513997544393?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20ver%20o%20catalogo%20atualizado!!" className="hover:text-blue-pastel transition-colors">Catálogo</a>
+                            <a href="/catalogo" className="hover:text-blue-pastel transition-colors">Catálogo</a>
                             <a href="https://www.instagram.com/erikagolegapersonalizados/" target="_blank" className="hover:text-blue-pastel transition-colors">Instagram</a>
                         </div>
 

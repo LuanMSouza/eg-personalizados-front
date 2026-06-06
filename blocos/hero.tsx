@@ -21,8 +21,8 @@ export default function Hero() {
                         Detalhes que encantam, camadas que contam histórias.
                         Personalizados de luxo para festas exclusivas na Baixada Santista.
                     </p>
-                    <a href="https://wa.me/5513997544393?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20gostaria%20de%20ver%20o%20catalogo%20atualizado!!" className="bg-[#F7A072]  text-white px-8 py-4 rounded-full text-lg font-bold">
-                        Ver Catálogo no Whatsapp
+                    <a href="/catalogo" className="bg-[#F7A072]  text-white px-8 py-4 rounded-full text-lg font-bold">
+                        Ver Catálogo online
                     </a>
                 </div>
 

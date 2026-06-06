@@ -9,7 +9,7 @@ export function Nav() {
                     <Link href="/">
                         <h1 className={`${quicksand.className} text-xl tracking-tighter text-pink-primary cursor-pointer`}>
                             Érika Golegã
-                        </h1>
+                        </h1> 
                     </Link>
 
                     {/* Links de Navegação */}
@@ -17,6 +17,7 @@ export function Nav() {
                         <a href="/" className="hover:text-pink-primary transition-colors">Início</a>
                         <a href="/#diferencial" className="hover:text-pink-primary transition-colors">Qualidade</a>
                         <a href="/#encomenda" className="hover:text-pink-primary transition-colors">Como pedir</a>
+                        <a href="/catalogo" className="hover:text-pink-primary transition-colors">Catálogo</a>
                     </div>
 
                     {/* CTA Principal */}
