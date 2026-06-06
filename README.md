@@ -2,7 +2,7 @@
 
 # EG Personalizados — Site
 
-Site e catálogo da EG Personalizados.
+Site desenvolvido para a EG Personalizados, empresa da região de Santos, SP.
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -15,7 +15,7 @@ Site e catálogo da EG Personalizados.
 
 ## 📋 Sobre
 
-Site e catálogo de produtos da EG Personalizados, empresa especializada em produtos personalizados. Permite que clientes conheçam os produtos e entrem em contato.
+Projeto freelance desenvolvido para a **EG Personalizados**, empresa especializada em produtos personalizados localizada na região de Santos, SP. O site apresenta o catálogo de produtos e facilita o contato com novos clientes.
 
 ## 🚀 Como Rodar
 
