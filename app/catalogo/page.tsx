@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { getCatalogo } from "./actions";
 import CatalogoClient from "@/componentes/catalogoClient";
 
+// O catálogo era gerado só no deploy: foto, preço e descrição alterados na
+// gestão não apareciam no site. Agora a página se atualiza a cada 5 minutos.
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: "Catálogo",
   description: "Confira o catálogo completo de personalizados de luxo da Érika Golegã: caixas, lembrancinhas e papelaria artesanal feita à mão para festas na Baixada Santista.",
